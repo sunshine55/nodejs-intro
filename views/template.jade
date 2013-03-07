@@ -1,0 +1,186 @@
+!!! 5
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title CouchDB-NodeJS-Charisma Demo
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.')
+    meta(name='author', content='Muhammad Usman')
+    link#bs-css(href='css/bootstrap-cerulean.css', rel='stylesheet')
+    style(type='text/css')
+      body {
+      padding-bottom: 40px;
+      }
+      .sidebar-nav {
+      padding: 9px 0;
+      }
+    link(href='css/bootstrap-responsive.css', rel='stylesheet')
+    link(href='css/charisma-app.css', rel='stylesheet')
+    link(href='css/jquery-ui-1.8.21.custom.css', rel='stylesheet')
+    link(href='css/fullcalendar.css', rel='stylesheet')
+    link(href='css/fullcalendar.print.css', rel='stylesheet', media='print')
+    link(href='css/chosen.css', rel='stylesheet')
+    link(href='css/uniform.default.css', rel='stylesheet')
+    link(href='css/colorbox.css', rel='stylesheet')
+    link(href='css/jquery.cleditor.css', rel='stylesheet')
+    link(href='css/jquery.noty.css', rel='stylesheet')
+    link(href='css/noty_theme_default.css', rel='stylesheet')
+    link(href='css/elfinder.min.css', rel='stylesheet')
+    link(href='css/elfinder.theme.css', rel='stylesheet')
+    link(href='css/jquery.iphone.toggle.css', rel='stylesheet')
+    link(href='css/opa-icons.css', rel='stylesheet')
+    link(href='css/uploadify.css', rel='stylesheet')
+    link(rel='shortcut icon', href='img/favicon.ico')
+  body
+    .navbar
+      .navbar-inner
+        .container-fluid
+          a.btn.btn-navbar(data-toggle='collapse', data-target='.top-nav.nav-collapse,.sidebar-nav.nav-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href='/users')
+            img(alt='Charisma Logo', src='img/logo20.png')
+            span Charisma
+          .btn-group.pull-right.theme-container
+            a.btn.dropdown-toggle(data-toggle='dropdown', href='#')
+              i.icon-tint
+              span.hidden-phone  Change Theme / Skin
+              span.caret
+            ul#themes.dropdown-menu
+              li
+                a(data-value='classic', href='#')
+                  i.icon-blank
+                  | Classic
+              li
+                a(data-value='cerulean', href='#')
+                  i.icon-blank
+                  | Cerulean
+              li
+                a(data-value='cyborg', href='#')
+                  i.icon-blank
+                  | Cyborg
+              li
+                a(data-value='redy', href='#')
+                  i.icon-blank
+                  | Redy
+              li
+                a(data-value='journal', href='#')
+                  i.icon-blank
+                  | Journal
+              li
+                a(data-value='simplex', href='#')
+                  i.icon-blank
+                  | Simplex
+              li
+                a(data-value='slate', href='#')
+                  i.icon-blank
+                  | Slate
+              li
+                a(data-value='spacelab', href='#')
+                  i.icon-blank
+                  | Spacelab
+              li
+                a(data-value='united', href='#')
+                  i.icon-blank
+                  | United
+          .btn-group.pull-right
+            a.btn.dropdown-toggle(data-toggle='dropdown', href='#')
+              i.icon-user
+              span.hidden-phone  admin
+              span.caret
+            ul.dropdown-menu
+              li
+                a(href='#') Profile
+              li.divider
+              li
+                a(href='/') Logout
+          .top-nav.nav-collapse
+            ul.nav
+              li
+                a(href='#') Visit Site
+              li
+                form.navbar-search.pull-left
+                  input.search-query.span2(placeholder='Search', name='query', type='text')
+    .container-fluid
+      .row-fluid
+        .span2.main-menu-span
+          .well.nav-collapse.sidebar-nav
+            ul.nav.nav-tabs.nav-stacked.main-menu
+              li.nav-header.hidden-tablet Dashboard
+              li
+                a.ajax-link(href='/products')
+                  i.icon-shopping-cart
+                  span.hidden-tablet  Products
+              li
+                a.ajax-link(href='/users')
+                  i.icon-user
+                  span.hidden-tablet  Users
+              li
+                a(href='/')
+                  i.icon-lock
+                  span.hidden-tablet  Login Page
+            label#for-is-ajax.hidden-tablet(for='is-ajax')
+              input#is-ajax(type='checkbox')
+              | Ajax on menu
+        noscript
+          .alert.alert-block.span10
+            h4.alert-heading Warning!
+            p
+              | You need to have
+              a(href='http://en.wikipedia.org/wiki/JavaScript', target='_blank') JavaScript
+              | enabled to use this site.
+        block content
+      hr
+      #myModal.modal.hide.fade
+        .modal-header
+          button.close(type='button', data-dismiss='modal') ×
+          h3 Settings
+        .modal-body
+          p Here settings can be configured...
+        .modal-footer
+          a.btn(href='#', data-dismiss='modal') Close
+          a.btn.btn-primary(href='#') Save changes
+      footer
+        p.pull-left
+          | ©
+          a(href='http://usman.it', target='_blank') Muhammad Usman
+          | 2012
+        p.pull-right
+          | Powered by:
+          a(href='http://usman.it/free-responsive-admin-template') Charisma
+    script(src='js/jquery-1.7.2.min.js')
+    script(src='js/jquery-ui-1.8.21.custom.min.js')
+    script(src='js/bootstrap-transition.js')
+    script(src='js/bootstrap-alert.js')
+    script(src='js/bootstrap-modal.js')
+    script(src='js/bootstrap-dropdown.js')
+    script(src='js/bootstrap-scrollspy.js')
+    script(src='js/bootstrap-tab.js')
+    script(src='js/bootstrap-tooltip.js')
+    script(src='js/bootstrap-popover.js')
+    script(src='js/bootstrap-button.js')
+    script(src='js/bootstrap-collapse.js')
+    script(src='js/bootstrap-carousel.js')
+    script(src='js/bootstrap-typeahead.js')
+    script(src='js/bootstrap-tour.js')
+    script(src='js/jquery.cookie.js')
+    script(src='js/fullcalendar.min.js')
+    script(src='js/jquery.dataTables.min.js')
+    script(src='js/excanvas.js')
+    script(src='js/jquery.flot.min.js')
+    script(src='js/jquery.flot.pie.min.js')
+    script(src='js/jquery.flot.stack.js')
+    script(src='js/jquery.flot.resize.min.js')
+    script(src='js/jquery.chosen.min.js')
+    script(src='js/jquery.uniform.min.js')
+    script(src='js/jquery.colorbox.min.js')
+    script(src='js/jquery.cleditor.min.js')
+    script(src='js/jquery.noty.js')
+    script(src='js/jquery.elfinder.min.js')
+    script(src='js/jquery.raty.min.js')
+    script(src='js/jquery.iphone.toggle.js')
+    script(src='js/jquery.autogrow-textarea.js')
+    script(src='js/jquery.uploadify-3.1.min.js')
+    script(src='js/jquery.history.js')
+    script(src='js/charisma.js')

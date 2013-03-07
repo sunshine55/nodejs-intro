@@ -1,0 +1,33 @@
+extends template
+
+block content
+    #content.span10
+      div
+        ul.breadcrumb
+          li
+            a(href='#') Home
+            span.divider /
+          li
+            a(href='#') Products
+      .row-fluid.sortable
+        .box.span12
+          .box-header.well(data-original-title='data-original-title')
+            h2
+              i.icon-picture
+              | Gallery
+            .box-icon
+              a.btn.btn-setting.btn-round(href='#')
+                i.icon-cog
+              a.btn.btn-minimize.btn-round(href='#')
+                i.icon-chevron-up
+              a.btn.btn-close.btn-round(href='#')
+                i.icon-remove
+          .box-content
+            p.center
+              button#toggle-fullscreen.btn.btn-large.btn-primary.visible-desktop(data-toggle='button') Toggle Fullscreen
+            br
+            ul.thumbnails.gallery
+              for prod in products
+                li(id=prod.Id, class='thumbnail')
+                  a(style='background: url(img/gallery/thumbs/#{prod.Image});', title='#{prod.Item}', href='img/gallery/#{prod.Image}')
+                    img.grayscale(src='img/gallery/thumbs/#{prod.Image}', alt='#{prod.Item}')
