@@ -26,20 +26,19 @@ block content
           table.table.table-striped.table-bordered.bootstrap-datatable.datatable
             thead
               tr
-                th First Name
-                th Last Name
+                th Full Name
                 th Phone
                 th Username
                 th Password
+                th Actions
             tbody
               for user in users
                 tr
-                  td #{user.Firstname}
-                  td.center #{user.Lastname}
+                  td #{user.Firstname} #{user.Lastname}
                   td.center #{user.Phone}
-                  td.center #{user.Username}
+                  td.center  #{user.Username}
                   td.center
-                    span.label.label-success #{user.Password}
+                    span.label.label-success  #{user.Password}
                   td.center
                     a.btn.btn-success(href='#')
                       i.icon-zoom-in.icon-white
