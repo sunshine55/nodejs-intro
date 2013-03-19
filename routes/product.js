@@ -7,6 +7,7 @@ var Product = function(id, item, image, price) {
     this.Price = price;
 };
 
+/*Cloudant connection*/
 var cradle = require('cradle');
 var c = new(cradle.Connection)(
     'https://tonywu90.cloudant.com',

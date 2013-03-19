@@ -1,31 +1,31 @@
-extends layout
+extends template/tmpl_out
 
 block content
-    .container-fluid
+  .container-fluid
+    .row-fluid
       .row-fluid
-        .row-fluid
-          .span12.center.login-header
-            h2 Demo #{title}
-        .row-fluid
-          .well.span5.center.login-box
-            .alert.alert-info
-              | Please login with your Username and Password.
-            form.form-horizontal(action='/login', method='post')
-              fieldset
-                .input-prepend(title='Username', data-rel='tooltip')
-                  span.add-on
-                    i.icon-user
-                  input#username.input-large.span10(autofocus='autofocus', name='username', type='text', value='admin')
-                .clearfix
-                .input-prepend(title='Password', data-rel='tooltip')
-                  span.add-on
-                    i.icon-lock
-                  input#password.input-large.span10(name='password', type='password', value='admin123456')
-                .clearfix
-                .input-prepend
-                  label.remember(for='remember')
-                    input#remember(type='checkbox')
-                    | Remember me
-                .clearfix
-                p.center.span5
-                  button.btn.btn-primary(type='submit') Login
+        .span12.center.login-header
+          h2 Demo #{title}
+      .row-fluid
+        .well.span5.center.login-box
+          .alert.alert-info
+            | #{message}
+          form.form-horizontal(action='/session/login', method='post')
+            fieldset
+              .input-prepend(title='Username', data-rel='tooltip')
+                span.add-on
+                  i.icon-user
+                input#username.input-large.span10(autofocus='autofocus', name='username', type='text', value='admin')
+              .clearfix
+              .input-prepend(title='Password', data-rel='tooltip')
+                span.add-on
+                  i.icon-lock
+                input#password.input-large.span10(name='password', type='password', value='admin123456')
+              .clearfix
+              .input-prepend
+                label.remember(for='remember')
+                  input#remember(type='checkbox')
+                  | Remember me
+              .clearfix
+              p.center.span5
+                button.btn.btn-primary(type='submit') Login

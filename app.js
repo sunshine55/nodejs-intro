@@ -1,12 +1,8 @@
-
-/**
- * Module dependencies.
- */
-
 var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , product = require('./routes/product')
+  , session = require('./routes/session')
   , http = require('http')
   , path = require('path');
 
@@ -20,6 +16,16 @@ app.configure(function(){
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use(express.cookieParser('secretcookie'));
+  app.use(express.session());
+  app.use(function(req, res, next){
+      var err = req.session.error;
+      delete req.session.error;
+      delete req.session.success;
+      res.locals.message = 'Please login with your Username and Password.';
+      if (err) res.locals.message = err;
+      next();
+  });
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public/')));
 });
@@ -29,9 +35,10 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
-app.get('/products', product.list);
-app.get('/users', user.list);
-app.post('/login', user.verify);
+app.get('/products', session.restrict, product.list);
+app.get('/users', session.restrict, user.list);
+app.post('/session/login', session.login);
+app.get('/session/logout', session.logout);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

@@ -1,34 +1,40 @@
-var users = [
+var users = [];
+
+var User = function(firstname, lastname, phone, username, password) {
+    this.Firstname = firstname;
+    this.Lastname = lastname;
+    this.Phone = phone;
+    this.Username = username;
+    this.Password = password;
+};
+
+/*Cloudant connection*/
+var cradle = require('cradle');
+var c = new(cradle.Connection)(
+    'https://tonywu90.cloudant.com',
+    443,
     {
-        "FirstName": "Matt",
-        "LastName": "Jenkins",
-        "Username": "matt",
-        "Password": "123",
-        "Phone": "810-200-3636"
-    },
-    {
-        "FirstName": "Jade",
-        "LastName": "Connor",
-        "Username": "jade",
-        "Password": "456",
-        "Phone": "810-300-4636"
-    },
-    {
-        "FirstName": "Jack",
-        "LastName": "Black",
-        "Username": "jack",
-        "Password": "789",
-        "Phone": "810-201-3646"
+        secure: true,
+        auth: { username: 'rustspellyaressezenentom', password: 'MwRWHCIG0KpGCVmeKkeACAEW' }
     }
-];
+);
+var db = c.database('member');
+
+/*Localhost connection*/
+//var cradle = require('cradle');
+//var db = new(cradle.Connection)().database('member');
+
+/*CRUD*/
+db.view('member/all', function(err, res) {
+    if(!err){
+        res.forEach(function(row) {
+            users.push(new User(row.firstname, row.lastname, row.phone, row.username, row.password));
+        });
+    } else {
+        console.log(err.message);
+    }
+});
 
 exports.list = function(req, res) {
     res.render('users', {"users": users, "title": "Members"});
-};
-
-exports.verify = function(req, res) {
-    if((req.body.username == "admin") && (req.body.password == "admin123456")) {
-        res.render('users', {"users": users, "title": "Members"});
-    }
-    res.send("Oops! Wrong username or password, please check them again.");
 };
