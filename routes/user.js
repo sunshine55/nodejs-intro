@@ -15,7 +15,7 @@ var c = new(cradle.Connection)(
     443,
     {
         secure: true,
-        auth: { username: 'rustspellyaressezenentom', password: 'MwRWHCIG0KpGCVmeKkeACAEW' }
+        auth: { username: 'tonstinksheyourniessinge', password: 'PUuPs0Sv3CB4wlPAcn21xDyf' }
     }
 );
 var db = c.database('member');
@@ -24,7 +24,6 @@ var db = c.database('member');
 //var cradle = require('cradle');
 //var db = new(cradle.Connection)().database('member');
 
-/*CRUD*/
 db.view('member/all', function(err, res) {
     if(!err){
         res.forEach(function(row) {
@@ -36,5 +35,5 @@ db.view('member/all', function(err, res) {
 });
 
 exports.list = function(req, res) {
-    res.render('users', {"users": users, "title": "Members"});
+    res.render('users', { users: users, title: 'Members' });
 };
