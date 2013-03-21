@@ -29,5 +29,5 @@ block content
           ul.thumbnails.gallery
             for prod in products
               li(id=prod.Id, class='thumbnail')
-                a(style='background: url(img/gallery/thumbs/#{prod.Image});', title='#{prod.Item}', href='img/gallery/#{prod.Image}')
-                  img.grayscale(src='img/gallery/thumbs/#{prod.Image}', alt='#{prod.Item}')
+                a(style='background: url(/img/gallery/thumbs/#{prod.Image});', title='#{prod.Item}', href='/img/gallery/#{prod.Image}')
+                  img.grayscale(src='/img/gallery/thumbs/#{prod.Image}', alt='#{prod.Item}')
