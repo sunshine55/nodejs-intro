@@ -30,6 +30,7 @@ var db = c.database('member');
 exports.list = function(req, res) {
     db.view('member/all', function(err, dbres) {
         if(!err) {
+            users = lookup = [];
             dbres.forEach(function(row) {
                 var user = new User(row.id, row.firstname, row.lastname, row.phone, row.username, row.password, row.rev);
                 users.push(user);
@@ -46,7 +47,6 @@ exports.delete = function(req, res) {
     var user = lookup[req.params.id];
     db.remove(user.Id, user.Rev, function (err) {
         if(!err) {
-            users = lookup = [];
     		res.redirect('/users');
         } else {
             console.log(err.message);
