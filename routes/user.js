@@ -1,11 +1,14 @@
 var users = [];
+var lookup = {};
 
-var User = function(firstname, lastname, phone, username, password) {
+var User = function(id, firstname, lastname, phone, username, password, rev) {
+    this.Id = id;
     this.Firstname = firstname;
     this.Lastname = lastname;
     this.Phone = phone;
     this.Username = username;
     this.Password = password;
+    this.Rev = rev;
 };
 
 /*Cloudant connection*/
@@ -20,20 +23,33 @@ var c = new(cradle.Connection)(
 );
 var db = c.database('member');
 
-/*Localhost connection*/
+/* Localhost conneciton */
 //var cradle = require('cradle');
 //var db = new(cradle.Connection)().database('member');
 
-db.view('member/all', function(err, res) {
-    if(!err){
-        res.forEach(function(row) {
-            users.push(new User(row.firstname, row.lastname, row.phone, row.username, row.password));
-        });
-    } else {
-        console.log(err.message);
-    }
-});
-
 exports.list = function(req, res) {
-    res.render('users', { users: users, title: 'Members' });
+    db.view('member/all', function(err, dbres) {
+        if(!err) {
+            dbres.forEach(function(row) {
+                var user = new User(row.id, row.firstname, row.lastname, row.phone, row.username, row.password, row.rev);
+                users.push(user);
+                lookup[user.Id] = user;
+            });
+            res.render('users', { title: 'Members', users: users});
+        } else {
+            console.log(err.message);
+        }
+    });
+};
+
+exports.delete = function(req, res) {
+    var user = lookup[req.params.id];
+    db.remove(user.Id, user.Rev, function (err) {
+        if(!err) {
+            users = lookup = [];
+    		res.redirect('/users');
+        } else {
+            console.log(err.message);
+        }
+    });
 };

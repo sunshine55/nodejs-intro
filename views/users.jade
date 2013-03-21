@@ -40,12 +40,9 @@ block content
                   td.center
                     span.label.label-success  #{user.Password}
                   td.center
-                    a.btn.btn-success(href='#')
-                      i.icon-zoom-in.icon-white
-                      | View
                     a.btn.btn-info(href='#')
                       i.icon-edit.icon-white
                       | Edit
-                    a.btn.btn-danger(href='#')
+                    a.btn.btn-danger(href='/users/#{user.Id}/delete')
                       i.icon-trash.icon-white
                       | Delete
