@@ -1,11 +1,26 @@
 # README for a newly created project.
 
+
+Pulling project from Git to your Cloud9 workspace
+-------------------------------------------------
+
+Signup for a Cloud9 account and create your first workspace, then:
+
+  * Add this upstream repo
+    `git remote add upstream -m master [remote url(eg. 'git://github.com/sunshine55/sanpuru')]` [Enter]
+  * Pull the upstream into workspace
+    `git pull -s recursive -X theirs upstream master` [Enter]
+
+
+Pushing your project from your Cloud9 workspace to Git
+------------------------------------------------------
+
 There are a couple of things you should do first, before you can use all of Git's power:
 
   * Add a remote to this project: in the Cloud9 IDE command line, you can execute the following commands
     `git remote add [remote name] [remote url (eg. 'git@github.com:/ajaxorg/node_chat')]` [Enter]
   * Create new files inside your project
-  * Add them to to Git by executing the following command
+  * Add them to Git by executing the following command
     `git add [file1, file2, file3, ...]` [Enter]
   * Create a commit which can be pushed to the remote you just added
     `git commit -m 'added new files'` [Enter]
