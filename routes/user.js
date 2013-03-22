@@ -53,3 +53,25 @@ exports.delete = function(req, res) {
         }
     });
 };
+
+exports.profile = function(req, res) {
+    var user = lookup[req.params.id];
+    res.render('profile', { title: 'Member Profile', user: user });
+};
+
+exports.edit = function(req, res) {
+    var id = req.params.id;
+    var firstname = req.body.firstname;
+    var lastname = req.body.lastname;
+    var phone = req.body.phone;
+    var username = req.body.username;
+    var password = req.body.password;
+    var new_user = { firstname: firstname, lastname: lastname, phone: phone, username: username, password: password };
+    db.merge(id, new_user, function (err) {
+        if(!err) {
+            res.redirect('/users');
+        } else {
+            res.send(err.message);
+        }
+    });
+};
