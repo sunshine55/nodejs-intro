@@ -40,7 +40,7 @@ block content
                   td.center
                     span.label.label-success  #{user.Password}
                   td.center
-                    a.btn.btn-info(href='/profile/#{user.Id}')
+                    a.btn.btn-info(href='/profile?id=#{user.Id}')
                       i.icon-edit.icon-white
                       | Edit
                     a.btn.btn-danger(href='/users/#{user.Id}/delete')

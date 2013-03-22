@@ -55,7 +55,7 @@ exports.delete = function(req, res) {
 };
 
 exports.profile = function(req, res) {
-    var user = lookup[req.params.id];
+    var user = lookup[req.query.id];
     res.render('profile', { title: 'Member Profile', user: user });
 };
 

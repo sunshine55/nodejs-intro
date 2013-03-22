@@ -38,7 +38,7 @@ app.get('/', routes.index);
 app.post('/session/login', session.login);
 app.get('/session/logout', session.logout);
 app.get('/products', session.restrict, product.list);
-app.get('/profile/:id', session.restrict, user.profile);
+app.get('/profile', session.restrict, user.profile);
 app.get('/users/:id/delete', session.restrict, user.delete);
 app.post('/users/:id/edit', session.restrict, user.edit);
 app.get('/users', session.restrict, user.list);
