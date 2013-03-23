@@ -14,13 +14,14 @@ var c = new(cradle.Connection)(
     443,
     {
         secure: true,
-        auth: { username: 'imearcheingoisamestristi', password: '2DLixvUHftVONX0SSlOOlIiF' }
+        auth: { username: 'timsedisraceinglitenglan', password: 'f0UegysQUGvyyASi581fqqts' }
     }
 );
-var db = c.database('charismatest');
+var db = c.database('products');
 
 /*Localhost connection*/
 //var cradle = require('cradle');
+//var db = new(cradle.Connection)().database('product');
 
 db.view('product/all', function(err, res) {
     if(!err){

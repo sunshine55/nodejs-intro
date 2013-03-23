@@ -18,10 +18,10 @@ var c = new(cradle.Connection)(
     443,
     {
         secure: true,
-        auth: { username: 'shediethomtoingandeasede', password: '342qNFfedodKWvB77tdeK67y' }
+        auth: { username: 'tingenceiverystionerithe', password: 'RudO7mNrHMCIf1Tp7YT3BvU5' }
     }
 );
-var db = c.database('member');
+var db = c.database('members');
 
 /* Localhost conneciton */
 //var cradle = require('cradle');
