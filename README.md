@@ -1,19 +1,17 @@
 # README for a newly created project.
 
 
-Pulling project from Git to your Cloud9 workspace
--------------------------------------------------
+Cloning and pulling project from Git to your Cloud9 workspace
+-------------------------------------------------------------
 
-Signup for a Cloud9 account and create your first workspace, then:
-
-  * Add this upstream repo
-    `git remote add upstream -m master [remote url(eg. 'git://github.com/sunshine55/sanpuru')]` [Enter]
-  * Pull the upstream into workspace
-    `git pull -s recursive -X theirs upstream master` [Enter]
+  * When create new workspace, choose "Clone From URL", use this URL:
+    `https://github.com/sunshine55/sanpuru.git` [CREATE]
+  * Pull the remote into workspace
+    `git pull [remote name] master` [Enter]
 
 
-Pushing your project from your Cloud9 workspace to Git
-------------------------------------------------------
+Pushing your project from your Cloud9 workspace to your Git repo
+----------------------------------------------------------------
 
 There are a couple of things you should do first, before you can use all of Git's power:
 
