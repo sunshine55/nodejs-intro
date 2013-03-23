@@ -6,6 +6,8 @@ Cloning and pulling project from Git to your Cloud9 workspace
 
   * When create new workspace, choose "Clone From URL", use this URL:
     `https://github.com/sunshine55/sanpuru.git` [CREATE]
+  * Add a remote
+    `git remote add [remote name] [remote url]` [Enter]
   * Pull the remote into workspace
     `git pull [remote name] master` [Enter]
 
