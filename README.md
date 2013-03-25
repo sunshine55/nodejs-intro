@@ -8,6 +8,10 @@ Cloning and pulling project from Git to your Cloud9 workspace
     `https://github.com/sunshine55/sanpuru.git` [CREATE]
   * Setup node modules:
     `npm install` [Enter]
+  * In order to update project, add a remote:
+    `git remote add [remote name] [remote url]` [Enter]
+  * Pull the remote into workspace
+    `git pull [remote name] master` [Enter]
 
 
 Pushing your project from your Cloud9 workspace to your Git repo
