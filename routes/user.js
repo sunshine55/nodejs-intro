@@ -47,7 +47,7 @@ exports.delete = function(req, res) {
     var user = lookup[req.params.id];
     db.remove(user.Id, user.Rev, function (err) {
         if(!err) {
-    		res.redirect('/users');
+            res.redirect('/users');
         } else {
             console.log(err.message);
         }
