@@ -12,12 +12,12 @@ block content
             | #{message}
           form.form-horizontal(action='/session/login', method='post')
             fieldset
-              .input-prepend(title='Username', data-rel='tooltip')
+              .input-prepend(title='Username: admin', data-rel='tooltip')
                 span.add-on
                   i.icon-user
                 input#username.input-large.span10(autofocus='autofocus', name='username', type='text', value='')
               .clearfix
-              .input-prepend(title='Password', data-rel='tooltip')
+              .input-prepend(title='Password: admin123456', data-rel='tooltip')
                 span.add-on
                   i.icon-lock
                 input#password.input-large.span10(name='password', type='password', value='')
