@@ -5,7 +5,7 @@ Cloning and pulling project from Git to your Cloud9 workspace
 -------------------------------------------------------------
 
   * When create new workspace, choose "Clone From URL", use this URL:
-    `https://github.com/sunshine55/sanpuru.git` [CREATE]
+    `https://github.com/sunshine55/nodejs-sample.git` [CREATE]
   * Setup node modules:
     `npm install` [Enter]
   * In order to update project, add a remote:
