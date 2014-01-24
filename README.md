@@ -28,7 +28,7 @@ There are a couple of things you should do first, before you can use all of Git'
   * Push the commit the remote
     `git push [remote name] master` [Enter]
 
-###Deploy on Heroku
+###Deploying on Heroku
 
 There are 2 ways to deploy on Heroku:
   
