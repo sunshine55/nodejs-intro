@@ -40,4 +40,8 @@ There are 2 ways to deploy on Heroku:
     - Open deploy tab (balloon icon) on Cloud9 workspace.
     - Create a deploy server (following the instructions of Cloud9)
 
-Don't forget the Procfile in your project so that Heroku can be aware of your deployment. Happy coding!
+Don't forget the Procfile in your project so that Heroku can be aware of your deployment.
+
+Sample demo deployment: http://hvndemo2.herokuapp.com/
+
+Happy coding!
